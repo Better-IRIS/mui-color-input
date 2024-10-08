@@ -7,17 +7,16 @@
     "url": "https://github.com/viclafouch/mui-color-input/issues"
   },
   "homepage": "https://viclafouch.github.io/mui-color-input/",
-  "version": "4.0.1",
+  "version": "4.0.0",
   "files": [
     "dist"
   ],
   "main": "./dist/mui-color-input.es.js",
   "types": "./dist/index.d.ts",
-  "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/mui-color-input.es.js",
+      "types": "./dist/index.d.ts",
       "default": "./dist/mui-color-input.es.js"
     }
   },
@@ -38,21 +37,19 @@
     "material"
   ],
   "scripts": {
-    "build": "pnpm lint && pnpm test -- run && vite build && pnpm check-types",
+    "build": "npm run lint && npm run test -- run && vite build",
     "lint": "tsc && eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "pnpm lint -- --fix",
-    "check-types": "attw --pack . --ignore-rules cjs-resolves-to-esm",
+    "lint:fix": "npm run lint -- --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest",
     "release": "standard-version",
     "coverage": "vitest run --coverage",
-    "prepare": "husky",
-    "preinstall": "npx only-allow pnpm"
+    "prepare": "husky"
   },
   "standard-version": {
     "scripts": {
-      "prerelease": "pnpm build"
+      "prerelease": "npm run build"
     },
     "skip": {
       "changelog": true
@@ -79,36 +76,35 @@
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
-    "@mui/material": "^6.1.1",
-    "@storybook/addon-actions": "^8.3.2",
-    "@storybook/addon-essentials": "^8.3.2",
-    "@storybook/addon-interactions": "^8.3.2",
-    "@storybook/addon-links": "^8.3.2",
-    "@arethetypeswrong/cli": "^0.16.4",
-    "@storybook/react": "^8.3.2",
-    "@storybook/react-vite": "^8.3.2",
-    "@storybook/test": "^8.3.2",
+    "@mui/material": "^6.0.0",
+    "@storybook/addon-actions": "^8.2.9",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
-    "@types/node": "^22.5.5",
-    "@types/react": "^18.3.8",
+    "@types/node": "^22.5.1",
+    "@types/react": "^18.3.4",
     "@types/stylis": "^4.2.6",
-    "@viclafouch/eslint-config-viclafouch": "^4.16.0",
+    "@viclafouch/eslint-config-viclafouch": "^4.15.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.56.0",
-    "husky": "^9.1.6",
+    "husky": "^9.1.5",
     "jsdom": "^25.0.0",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "standard-version": "^9.5.0",
-    "storybook": "^8.3.2",
+    "storybook": "^8.2.9",
     "stylis": "^4.3.4",
     "stylis-plugin-rtl": "^2.1.1",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.7",
-    "vite-plugin-dts": "^4.2.1",
-    "vitest": "^2.1.1"
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vite-plugin-dts": "^4.0.3",
+    "vitest": "^2.0.5"
   }
 }
